@@ -25,12 +25,12 @@ for file in range(len(files)):
             start = index[0][14]
             print(i)
         if control[start + 13] == 0:
-            df_res = df_res.append(
+            df_res = df_res._append(
                 {'cycle': i, 'Voltages': Ecell[start:start + 14], 'rate': cr, 'Tem': Tem, 'Capacity': np.max(Q_dis)},
                 ignore_index=True)
 
 # Save to excel file
-df_res.to_excel('Dataset_2_NCM_battery.xlsx', index=False)
+# df_res.to_excel('Dataset_2_NCM_battery.xlsx', index=False)
 # Or save to csv file
-# df_res.to_csv('Dataset_2_NCM_battery.csv', index=False)
+df_res.to_csv('Dataset_2_NCM_battery.csv', index=False)
 print('Features extraction is done')
